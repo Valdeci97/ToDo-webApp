@@ -1,6 +1,6 @@
 const mongoose = require('../config/db');
 
-const Schema = mongoose;
+const Schema = mongoose.Schema;
 
 const taskSchema = new Schema({
   macaddress: { type: String, required: true },
@@ -9,7 +9,7 @@ const taskSchema = new Schema({
   description: { type: String, required: true },
   when: { type: Date, required: true },
   done: { type: Boolean, default: false },
-  created: { type: Date, default: Date.now() }
+  created: { type: Date, default: Date.now() },
 });
 
 module.exports = mongoose.model('Task', taskSchema);
