@@ -4,6 +4,7 @@ const create = require('../controller/createTask');
 const update = require('../controller/updateTask');
 const getAll = require('../controller/getAll');
 const getById = require('../controller/getById');
+const deletetask = require('../controller/delete');
 
 const taskValidation = require('../middleware/taskValidation');
 const dateValidation = require('../middleware/dateValidation');
@@ -15,7 +16,9 @@ router.post('/',taskValidation, dateValidation, create);
 
 router.put('/:id',dateValidation, update);
 
-router.get('/:id', getById)
+router.get('/:id', getById);
+
+router.delete('/:id', deletetask);
 
 router.get('/filter/all', macValidation, getAll);
 
