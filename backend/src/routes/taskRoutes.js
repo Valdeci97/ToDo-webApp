@@ -6,6 +6,7 @@ const getAll = require('../controller/getAll');
 const getById = require('../controller/getById');
 const deletetask = require('../controller/deleteTask');
 const done = require('../controller/doneTask');
+const late = require('../controller/lateTask');
 
 const taskValidation = require('../middleware/taskValidation');
 const dateValidation = require('../middleware/dateValidation');
@@ -25,5 +26,6 @@ router.put('/:id/:done', done);
 
 router.get('/filter/all', macValidation, getAll);
 
+router.get('/filter/late', macValidation, late);
 
 module.exports = router;
