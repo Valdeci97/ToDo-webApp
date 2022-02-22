@@ -3,7 +3,7 @@ const taskModel = require('../model/taskModel');
 
 const month = async (req, res) => {
   try {
-    const { macaddress } = req.body;
+    const { macaddress } = req.params;
     const now = new Date();
     const result = await taskModel.find({
       'macaddress': { '$in': macaddress },

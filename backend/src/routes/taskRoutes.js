@@ -14,7 +14,6 @@ const year = require('../controller/yearTask');
 
 const taskValidation = require('../middleware/taskValidation');
 const dateValidation = require('../middleware/dateValidation');
-const macValidation = require('../middleware/macaddressValidation');
 
 const router = express.Router();
 
@@ -28,16 +27,16 @@ router.delete('/:id', deletetask);
 
 router.put('/:id/:done', done);
 
-router.get('/filter/all', macValidation, getAll);
+router.get('/filter/all/:macaddress', getAll);
 
-router.get('/filter/late', macValidation, late);
+router.get('/filter/late/:macaddress', late);
 
-router.get('/filter/today', macValidation, today);
+router.get('/filter/today/:macaddress', today);
 
-router.get('/filter/week', macValidation, week);
+router.get('/filter/week/:macaddress', week);
 
-router.get('/filter/month', macValidation, month);
+router.get('/filter/month/:macaddress', month);
 
-router.get('/filter/year', macValidation, year);
+router.get('/filter/year/:macaddress', year);
 
 module.exports = router;
