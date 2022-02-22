@@ -9,6 +9,8 @@ const done = require('../controller/doneTask');
 const late = require('../controller/lateTask');
 const today = require('../controller/todayTask');
 const week = require('../controller/weekTask');
+const month = require('../controller/monthTask');
+const year = require('../controller/yearTask');
 
 const taskValidation = require('../middleware/taskValidation');
 const dateValidation = require('../middleware/dateValidation');
@@ -33,5 +35,9 @@ router.get('/filter/late', macValidation, late);
 router.get('/filter/today', macValidation, today);
 
 router.get('/filter/week', macValidation, week);
+
+router.get('/filter/month', macValidation, month);
+
+router.get('/filter/year', macValidation, year);
 
 module.exports = router;
