@@ -6,9 +6,20 @@ const dateValidaton = async (req, res, next) => {
   const { id } = req.params;
   const { macaddress, when } = req.body;
   if (isPast(new Date(when))) {
-    return res.status(400).send({
-      error: 'A data e hora informadas são inválidas! Escolha uma data futura.'
-    });
+    if (id) {
+      const task = await changeInfo(id, when, macaddress);
+      if (!task) {
+        next(); 
+      } else {
+        return res.status(400).send({
+          error: 'A data e hora informadas são inválidas! Escolha uma data futura.'
+        });
+      }
+    } else {
+      return res.status(400).send({
+        error: 'A data e hora informadas são inválidas! Escolha uma data futura.'
+      });
+    }
   }
   const exists = id ? await changeInfo(id, when, macaddress)
     : await isSameDate(when, macaddress);
