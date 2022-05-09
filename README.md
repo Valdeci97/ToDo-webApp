@@ -4,7 +4,7 @@
 
 # <p align="center">Project ToDo-webApp API</p>
 
-This project Implements a Rest API connected to a mongodb instance, maintained and feeded by a React Native App ToDo list or a Desktop React App.
+This project Implements a Rest API connected to a mongodb instance, maintained and feeded by a React Native App ToDo list and a Desktop React App.
 Db connection was implemented with mongoose and backend routes was made with Express.js.
 
 
