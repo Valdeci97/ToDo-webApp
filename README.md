@@ -19,7 +19,7 @@ Project Made to improve my nodejs knowledge during my course time at [Trybe](htt
 </div>
 
 ### <p align="center">How to use</p>
-We'll need [Git](https://git-scm.com/), [Nodejs 14.19.2](https://nodejs.org/) or higher installed to clone and run this application.
+You'll need [Git](https://git-scm.com/), [Nodejs 14.19.2](https://nodejs.org/) or higher installed to clone and run this application.
 
 ```
 # Clone this repository
